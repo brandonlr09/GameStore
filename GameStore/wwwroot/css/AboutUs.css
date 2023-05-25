@@ -1,0 +1,31 @@
+﻿body {
+    background-image: url('../img/gamebackground.jpg');
+    background-size: auto;
+    padding-bottom: 30px;
+}
+
+main, .container {
+    max-width: 850px;
+}
+
+.container {
+    border-radius: 25px;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 50px 'Oswald', sans-serif;
+    color: #FF7F50;
+    letter-spacing: 6px;
+}
+
+.about-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 840px;
+}

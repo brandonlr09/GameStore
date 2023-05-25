@@ -1,0 +1,62 @@
+﻿body {
+    background-image: url('../img/gamebackground.jpg');
+    background-size: auto;
+    padding-bottom: 30px;
+}
+
+main, .container {
+    max-width: 550px;
+}
+
+.container {
+    border-radius: 25px;
+}
+
+.section-header {
+    text-align: center;
+    margin: 0 auto;
+    padding: 40px 0;
+    font: 300 60px 'Oswald', sans-serif;
+    color: #FF7F50;
+    letter-spacing: 6px;
+}
+
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    max-width: 540px;
+}
+
+.form-horizontal {
+    max-width: 400px;
+    font-family: 'Lato';
+    font-weight: 400;
+}
+
+.form-control, form-group {
+    margin-top: 10px;
+}
+
+.form-control,
+textarea {
+    max-width: 400px;
+    padding: 4px;
+    background-color: #FFFFFF;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.send-button {
+    display: block;
+    margin-top: 10px;
+    background-color: #FF7F50;
+    border-color: #D2691E;
+    font: 700 12px 'Lato', sans-serif;
+    letter-spacing: 2px;
+    height: 34px;
+    width: 400px;
+    overflow: hidden;
+}

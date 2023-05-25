@@ -1,0 +1,21 @@
+﻿.hero {
+    background-image: url(https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?cs=srgb&dl=pexels-lucie-liz-3165335.jpg&fm=jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.hero a{
+    width:200px;
+    margin-left:50px;
+}
+
+.card-body{
+    height:200px;
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}

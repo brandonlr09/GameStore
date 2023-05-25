@@ -1,0 +1,27 @@
+﻿
+.list-group {
+    display: inline-block;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.pos-right {
+    float: right;
+}
+
+.butn {
+    display: block;
+    width: 115px;
+    height: 35px;
+    background: #FF7F50;
+    padding: 7px;
+    text-align: center;
+    border-radius: 7px;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+
