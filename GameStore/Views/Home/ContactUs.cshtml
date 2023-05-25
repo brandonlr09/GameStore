@@ -1,0 +1,37 @@
+﻿@section css {
+    <link href="@Url.Content("~/css/ContactUs.css")" rel="stylesheet" />
+}
+    <div class="border border-3 border-dark rounded-3">
+
+        <h1 class="section-header">Contact Us</h1>
+
+        <div class="contact-wrapper">
+
+            <form id="contact-form" class="form-horizontal" role="form">
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="text" class="form-control border-dark" id="name" placeholder="Name" name="name" value="" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-12">
+                        <input type="email" class="form-control border-dark" id="email" placeholder="Email" name="email" value="" required>
+                    </div>
+                </div>
+
+                <textarea class="form-control border-dark" rows="10" placeholder="Message" name="message" required></textarea>
+
+                <button class="btn btn-primary send-button " id="submit" type="submit" value="SEND">SEND</button>
+
+            </form>
+
+        </div>
+    </div>
+
+
+
+
+
+

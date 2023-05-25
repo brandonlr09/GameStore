@@ -1,0 +1,50 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model GameStore.Models.Product
+@section css {
+    <link href="@Url.Content("~/css/ProductDetails.css")" rel="stylesheet" />
+}
+    @{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card container p-2">
+    <div class="row">
+
+        <div class="col-md-5">
+            <img src="@Url.Content(@Model.ImageURL)" alt="@Model.Name" />
+        </div>
+
+        <div class="col-md-6">
+            <h1>@Html.DisplayFor(model => model.Name)</h1>
+
+            <hr />
+
+            <p>
+                @Html.DisplayFor(model => model.Description)
+            </p>
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <span class="bold">@Html.DisplayNameFor(model => model.Category): </span>@Html.DisplayFor(model => model.Category)
+                </li>
+            </ul>
+
+            <p class="pos-right bold"><currency>@Html.DisplayFor(model => model.Price)</currency></p>
+
+            <br> <br>
+            <div>
+                
+                <button type="submit" value="Add to Cart" class="btn btn-primary form-control button pos-right" style="height:50px;">Add to Cart</button>
+            </div>
+
+        </div>
+        @if (User.IsInRole("Admin"))
+        {
+            <a class="butn" asp-action="Edit" asp-route-id="@Model?.Id">Edit</a>
+        }
+        <a class="butn" asp-action="Index">Back to List</a>
+    </div>
+
+</div>
+

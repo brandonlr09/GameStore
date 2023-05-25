@@ -1,0 +1,65 @@
+﻿@model GameStore.Models.ViewModel.ShoppingCartVM
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Shopping Cart</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            @*<th>
+            @Html.DisplayNameFor(model => model.IdentityUser)
+            </th>*@
+            <th>
+                Product Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                Quantity
+            </th>
+            <th>
+                Action
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ShoppingCarts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.product.Price)
+                </td>
+                <td>
+                    <div class="display-field">
+                        <img src="@item.product.ImageURL" alt="@item.product.Name" width="50px" />
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </td>
+                <td>
+                    <a asp-action="AddQuantity" asp-route-CartId="@item.Id" class="btn btn-primary">+</a>
+                    <a asp-action="MinusQuantity" asp-route-id="@item.Id" class="btn btn-primary">-</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<p class="h2">Total Price: <strong>@Model.TotalPrice.ToString("c")</strong></p>
+<a class="btn btn-secondary btn-lg" style="height:50px;" asp-controller="Products" asp-action="Index">Back to List</a>
+<a class="btn btn-success btn-lg">Checkout</a>
+
+

@@ -1,0 +1,65 @@
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@model IEnumerable<GameStore.Models.Product>
+
+@section css {
+    <link href="@Url.Content("~/css/homeIndex.css")" rel="stylesheet" />
+}
+
+    <div class="hero vh-100 d-flex align-items-center">
+        <div class="row ms-lg-4">
+            <h1 class="display-4 text-white">Get Unbeatable Prices at the <br />all new GAME STORE!</h1>
+            <a href="#GamesList" class="btn btn-secondary btn-lg fw-bold">Get Started</a>
+        </div>
+    </div>
+
+    <h2 class="mt-5" id="GamesList">Games</h2>
+    <hr />
+    <form class="container col-6" method="GET">
+        <div class="row">
+            <div class="col">
+                <select href="#GamesList" class="form-select" aria-label="Default select example" name="category">
+                    <option selected>Choose a category</option>
+                    <option value="0">Racing</option>
+                    <option value="1">RPG</option>
+                    <option value="2">FPS</option>
+                </select>
+            </div>
+            <a class="col mb-1"><input type="submit" value="Filter" class="btn btn-primary" /></a>
+        </div>
+    </form>
+
+    <div class="row pb-3">
+
+        @foreach (var product in Model)
+    {
+        <div class="col-lg-3 col-md-6">
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                    <div class="card ">
+                        <img src="@product.ImageURL" class="card-img-top rounded" />
+
+                        <div class="card-body">
+                            <div class="pl-1">
+                                <p class="card-title h5 text-primary fw-bold">@product.Name</p>
+                                <p class="card-title text-info text-dark small description"><b>@product.Description</b></p>
+                            </div>
+                            @if (SignInManager.IsSignedIn(User) && !User.IsInRole("Guest"))
+                            {
+
+                                <div class="pl-1 fs-4 fw-bold">
+                                    <p>$@product.Price.ToString("0.00")</p>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div>
+                        <a asp-action="CustomerDetails" class="btn btn-primary form-control" asp-route-Productid="@product.Id">
+                            Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
